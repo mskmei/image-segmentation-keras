@@ -26,7 +26,7 @@ def resnet_pspnet_VOC12_v0_1():
     REPO_URL = "https://github.com/divamgupta/image-segmentation-keras"
     MODEL_PATH = "pretrained_model_1/r2_voc12_resnetpspnet_384x576.24"
     model_url = "{0}/releases/download/{1}".format(REPO_URL, MODEL_PATH)
-    latest_weights = keras.utils.get_file(model_url.split("/")[-1], model_url)
+    latest_weights = keras.utils.data_utils.get_file(model_url.split("/")[-1], model_url)
 
     return model_from_checkpoint_path(model_config, latest_weights)
 
